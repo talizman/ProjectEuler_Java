@@ -1,0 +1,27 @@
+// It doesn't work now. I cannot figure out the reason for it :p
+public class P004 {
+	public static String reverseString(String string) {
+		return (new StringBuffer(string)).reverse().toString();
+	}
+	
+	public static boolean isPalindrom(String string) {
+		return string == reverseString(string);
+	}
+
+	public static void main(String[] args) {
+		int product = 0;
+		String productStr = new String();
+		String longest = new String();
+		
+		for (int i = 100; i < 1000; i++) {
+			for (int j = 100; j < 1000; j++) {
+				product = i * j;
+				productStr = Integer.toString(product);
+				if (isPalindrom(productStr)) longest = productStr;
+			}
+		}
+		System.out.println(productStr);
+		System.out.println(reverseString(productStr));
+		System.out.println(longest);
+	}
+}
