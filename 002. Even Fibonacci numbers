@@ -1,0 +1,20 @@
+
+public class P002 {
+	static int f_p = 1, f_q = 2, f_r = 0, f_s = 0;
+	static int sum = 2;
+	public static int fibonacci(int f_1, int f_2 ) {
+		int f_r = f_p + f_q;
+		return f_r;
+	}
+	
+	public static void main(String[] args) {
+		while (f_r < 4000000) {
+			f_r = fibonacci(f_p, f_q);
+			f_p = f_q;
+			f_q = f_r;
+			if (f_r % 2 == 0)
+				sum += f_r;
+		}
+		System.out.println(sum);
+	}
+}
