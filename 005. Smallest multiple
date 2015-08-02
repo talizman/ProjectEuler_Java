@@ -1,0 +1,27 @@
+
+public class P005 {
+	static boolean isPrime(int number) {
+		int i;
+		for (i=2; i<number; i++) {
+			if (number % i == 0) break;
+		}
+			if (i == number) return true;
+			else return false;
+	}
+	
+	public static void main(String[] args) {
+		long product = 1l;
+		for (int i = 1; i <= 20; i++) {
+			if (isPrime(i)) {
+				for (int j = i; ; j = j * i) {
+					if (j > 20) {
+						j = j / i;
+						product = product * j;
+						break;
+					}
+				}
+			}
+		}
+		System.out.println(product);
+	}
+}
