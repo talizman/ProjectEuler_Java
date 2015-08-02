@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+
+public class P007 {
+	static boolean isPrime(int number) {
+		int i;
+		for (i=2; i<number; i++) {
+			if (number % i == 0) break;
+		}
+			if (i == number) return true;
+			else return false;
+	}
+	
+	public static void main(String[] args) {
+		ArrayList<Integer> listPrime = new ArrayList<Integer>();
+		for (int i=0; ; i++) {
+			if (isPrime(i)) listPrime.add(i);
+			if (listPrime.size() == 10001) {
+				System.out.println(listPrime.get(10000));
+				break;
+			}
+		}
+	}
+}
